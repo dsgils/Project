@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça Tesouro</title>
+   
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    @media only screen and (max-width:500px){
+   #title{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    
+   }
+   h1{
+    color:#fff;
+    font-size: 30px;
+    }
+
+   #logo{
+    width: 30%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   #titulo{
+    
+    width: 70%;
+    height:150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 50px;
+   }
+   #display_black ,#OuroPopup{
+    position: fixed;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    }
+   .display_popup{
+    transition: ease 1s;
+    position:absolute;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display:none;
+    justify-content: center;
+    align-items: center;
+    
+    
+   }
+   .SubDisplay , .Sub_Ouro , .VideoArea{
+    margin:auto;
+    width: 90%;
+    height: 300px;
+    border: solid 6px white;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   #intro, p{
+    font-size: 32px;
+    font-weight:bold;
+    color: #000;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+  
+    
+
+   
+   input , .btnok{
+    width: 90%;
+    height: 50px;
+    font-size: 32px;
+    
+    
+    
+   }
+   .VideoArea{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+   }
+   #senha , #btn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    
+}
+    #senha{
+        outline: solid 2px;
+        animation-name: liner;
+        animation-iteration-count: infinite;
+        animation-delay: 0ms;
+        animation-duration: 3s;
+        margin: 10px auto 10px auto;
+    }
+   @keyframes liner {
+    0% {outline-color: red}
+    50% {outline-color: transparent}
+    100% {outline-color: red}
+   }
+
+   
+   .btnN, .btnS{
+    width: 50%;
+    height: 50px;
+    margin:10px 0px 0px 0px;
+    font-size: 25px;
+    font-weight: bold;
+   }
+   
+   .btnS{
+    margin-left: 10px;
+   }
+   #bote{margin-top: 10px;}
+   
+   }
+   
+   .img1{
+    width: 100%;
+    height: 100%;
+    animation-name: ouro;
+    animation-duration: 3s;
+    animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    
+   }
+   body{
+    background-image: url(Imagens/festa\ tema.jpg);
+    background-position:left;
+    background-size: 3000px;
+    background-repeat: no-repeat;
+   }
+   @keyframes ouro {
+        0%{width:100% ; height: 110px;}
+        50%{width:90% ;height: 95px;}
+        100%{width:100% ;height: 110px;}
+   }
+
+   #tuto{
+    
+    background-image: url(Imagens/festa\ tema2.jpg);
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size:2000px;
+    height: 100vh;
+    width:0px ;
+    position: absolute;
+    right:0px;
+    transition:ease 1s;
+    pointer-events: none;
+    animation-duration: 40s;
+    animation-delay: 0ms;
+    border: solid 0px transparent;
+   }
+   .tuto{
+    width: 100% !important ;
+    border: solid 5px #000 !important;
+   }
+
+   @keyframes imag {
+        0%{width:100%}
+        50%{width:93%}
+        100%{width:100%}
+   }
+
+   .imag{
+        width: 100%;
+        height: 180px;
+        background-image: url('Imagens/SURPRESA\ IMG.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin:auto;
+        animation: imag;
+        animation-duration: 2s;
+        animation-delay: 0ms;
+        animation-iteration-count: infinite;
+   }
+   
+   #h3, #p1, #p2 , #p3{
+    opacity: 0;
+    display:none;
+    position: absolute;
+    background-color: rgb(145, 141, 142);
+    border:solid 4px #353434;
+    color:#fff;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+    animation-name: mov;
+    transition: ease 30s;}
+
+    #h3{
+        animation-duration: 15s;
+            animation-delay: 0s;}
+
+    
+    
+    #p1{
+        animation-name: mov1;
+            animation-duration: 15s;
+                animation-delay: 4s;}
+
+    #p2{
+        animation-delay: 13s;
+            animation-duration: 20s;
+    }
+
+    
+    #p3{ 
+        animation-name: mov1;
+            animation-delay: 15s;
+                animation-duration: 20s;
+    }
+
+    @keyframes mov {
+        0% {left:-600px ; top:600px ;opacity: 0;width:350px}
+        10% { }
+        20% {left:50px; top:600px; opacity: 1;}
+        40% {left:50px}
+        50% {left:50px; top:200px; }
+        60% {left:50px}
+        80% {left:50px;width:340px; opacity: 1;top:200px;}
+        100% {left:-600px; top:350px;width: 100px; opacity: 0;}
+        
+    }
+    @keyframes mov1 {
+        0% {left:-600px ; top:600px ;opacity: 0;width:350px}
+        10% { }
+        20% {left:30px; top:600px; opacity: 1;}
+        40% {left:30px}
+        50% {left:50px; top:350px; }
+        60% {left:50px; top:350;}
+        80% {left:50px;width:350px; opacity: 1; top:300px;}
+        90% {left:50px;width:350px; opacity: 1; top:200px;}
+        100% {left:-600px; top:500px;width: 100px; opacity: 0;}
+        
+    }
+    
+    @keyframes backAnime {
+        0% {background-size:820px;}
+        10% {background-size:1500px;}
+        20% {background-size:800px;}
+        40% {background-size:1000px;}
+        50% {background-size:820px;}
+        60% {background-size:1200px;;}
+        80% {background-size:900px;}
+        90% {background-size:1800px;}
+        100% {background-size:820px;}
+        
+    }
+    @keyframes Msg1 {
+        0% {font-size: 30px;}
+        50% {font-size: 25px;}
+        100% {font-size: 30px;}
+        
+    }
+    @keyframes Key1 {
+        0% {width: 100px;}
+        50% {width:150px;}
+        100% {width: 100px;}
+        
+    }
+    @keyframes Missao1 {
+        0% {font-size: 20px; color: #000;}
+        50% {font-size: 25px; color: #008800;}
+        100% {font-size: 20px; color: #000;}
+        
+    }
+    
+    
+
+    #tempo{
+        
+        position: absolute;
+        color:white;
+        font-size: 150px;
+        font-weight: bold;
+        transition: ease 1s;
+        
+    }
+    #btnTuto{
+        width: 100%;
+        background: linear-gradient(#999999, #eee);
+        font-size: 30px;
+        padding: 10px 50px 10px 50px;
+        text-align: center;
+        color:black;
+        border: solid #555 2px;
+        
+    }
+
+    h4{
+        color: black;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .OuroImg{
+        width: 80%;
+            height: 80%;
+             
+    }
+
+    .fechar{
+        padding: 5px 10px 5px 10px;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        color: white;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        font-size:40px
+    }
+    #key1{
+        width: 100px;
+        animation-duration: 2s;
+        animation-delay: 3s;
+       
+    }
+    #msg1{
+        font-size: 30px;
+        height: 100px;
+        width: 90%;
+        text-align: center;
+        font-weight: bold;
+        animation-duration: 2s;
+        animation-delay: 1s;
+       
+    }
+    #missao{
+        animation-duration: 5s;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+    }
+    #display_black4{
+        background-color: #000;
+        position:fixed;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        top:0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #textLoad{
+        color: #fff;
+        margin: 20px;
+        font-size: 30px;
+    }
+    #loading{
+        width: 300px;
+        height: 100px;
+        font-size: 50px;
+    }
+    #happy{
+        width: 80%;
+        height: 150px;
+    }
+</style>    
+</head>
+
+<body onload="confirma()">
+
+    
+<div id="display_black4">
+ <div style="text-align: center;">
+    <div id="textLoad">Carregando...</div>
+    <button disabled id="loading" onclick="loadDysplay()">Aguarde!</button>
+ </div>
+</div>
+    <div id="OuroPopup" style="display:none">
+        <div class="fechar" onclick="Fechar()" >X</div>
+        <div class="Sub_Ouro">
+            <img class="OuroImg" src="Imagens/Bau.png">
+            <h4 id="Failed" >não foi dessa vez</h4>
+
+        </div>
+
+
+    </div>
+    
+    
+    <div id="tuto">
+        <div class="imag" ></div>
+         <h3 id="h3">O esconderijo da chave é mencionado na cor verde, onde fica a Pista 2</h3>
+        <div id="p1">Você deve Procurar pelo objeto em forma de chave que está encondido, nele terá uma pergunta</div>
+        <div id="p2">Após encontrar, você deve digitar a resposta e seguir para próxima fase.</div>
+        
+    </div>
+    
+    
+    
+    
+    <div id ="display_popup" style="display: none;" >
+        <div class="SubDisplay" > <p id="">Resposta Errada!.</p>
+            <button onclick ="OK()" class="btnok">OK</button>
+    </div>
+      
+
+    </div>
+
+    
+                           
+                         
+                        
+            
+         
+    
+    <div id ="title">
+        
+        <div id="logo"> <img onclick="ClickSound()" class="img1" src="Imagens/Treasure.png" ></div>
+            <div id="titulo"><img id="happy" src="Imagens/happy.png"></div>
+    
+        </div>
+
+
+        <button id="btnTuto" onclick="tutorial()" >Detalhes da Missão</button>
+    
+    
+    
+    <div class="VideoArea" style="margin-top: 20px; margin-bottom: 20px;">
+        <div id="msg1"></div>
+        <div> <img id="key1" src="Imagens/chave1.png"></div>
+        <div style="font-size: 30px;">2° Pista</div>
+        <div id="missao" style="height: 80px; width: 90%;text-align: center;font-size: 20px;">Agora de uma olhadinha<br><div id="pista1"> atrás de um travesseiro</div></div>
+
+    </div>
+    
+    
+    
+    
+    <input id="senha" type="text" name="senha" placeholder="Responda aqui" maxlength="6">
+        <input id="btn2" type="button" onclick="envia()" value="Confirmar" >
+
+    
+    
+    
+    
+
+   
+
+    <script>
+        evane = new Audio('Audio/SoundEva.mp3');
+        var btnTu = document.getElementById("btnTuto");
+        function confirma(){
+            setTimeout(() => {
+                document.getElementById("loading").innerHTML = "Aperte Aqui";
+                document.getElementById("loading").removeAttribute('disabled','disabled')
+                document.getElementById("textLoad").style.display = 'none';
+                exibir = document.getElementById("msg1");
+                exibir.innerHTML = "Parabéns," +' '+ localStorage.getItem('valueText') + "<br> você já tem uma<br> chave"
+                
+                
+                
+            }, 3000);
+            
+           //'Parabéns, você já tem<br> uma chave'//
+        }
+        function loadDysplay(){
+            var load = document.getElementById("display_black4");
+                document.getElementById("msg1").style.animationName = 'Msg1'
+                    document.getElementById("key1").style.animationName = 'Key1'
+                        document.getElementById("missao").style.animationName = 'Missao1'
+                            var aplausos = new Audio('Audio/aplauso.mp3');
+                                aplausos.play();
+                                btnTu.setAttribute('disabled','disabled');
+                                            btnTu.style.background = "linear-gradient(#999999, #eee)";
+                                setTimeout(() => {
+                                     
+                                        btnTu.removeAttribute('disabled','disabled');
+                                            btnTu.style.background = "linear-gradient(rgb(235 92 147), rgb(255 255 255)";
+                             }, 10000);
+                                    setTimeout(() => {
+                                            
+                                            aplausos.pause();
+                                            evane.play();
+                                            evane.volume = 0.5;
+                                            evane.loop = true;
+                                    }, 6000);
+
+            load.style.opacity = 1;
+
+            setTimeout(() => {
+              
+            load.style.opacity = 0;
+            setTimeout(() => {
+                load.style.display = 'none';
+            }, 100);  
+            }, 300);
+        }
+
+      
+        var btn0 = document.getElementsByName("bot");
+        var intro = document.getElementById("intro");
+        var tela = document.getElementById("display_black");
+        var bote = document.getElementById("bote");
+        var dual = document.getElementById("DualButton");
+        var popup = document.getElementById("display_popup");
+        var tutor = document.getElementById("tuto");
+        var ph0 = document.getElementById("h3");
+        var ph1 = document.getElementById("p1");
+        var ph2 = document.getElementById("p2");
+        var ph3 = document.getElementById("p3");
+        var btn2 = document.getElementById("btn2");
+        var OuroPopup = document.getElementById("OuroPopup");
+        
+        var titulo = document.getElementById("h1");
+        var tutor = document.getElementById("tuto");
+        var btn2 = document.getElementById("btn2");
+        var Sound4 = new Audio('Audio/SoundOne.mp3')
+        
+       
+       
+       
+function Fechar(){OuroPopup.style.display="none"; evane.play();}      
+       
+function ClickSound(){
+    let TextPopup = document.getElementById("Failed")
+    TextPopup.innerHTML = "Você só tem uma chave do baú." + " " + localStorage.getItem('valueText') +","+ " " + "encontre mais 3 chaves."
+    var sound1 = new Audio('Audio/Audio1.mp3');
+    evane.pause();
+    sound1.play();
+    OuroPopup.style.display = "flex";
+    
+    
+}     
+
+
+
+
+
+//cria promisse//  
+             
+function envia() {
+    evane.pause();
+    pass = document.getElementsByName("senha")[0].value
+                    
+        if(pass == "Moises" || pass == "moises" || pass == "moisés" || pass == "Moisés"){
+                    
+            window.location = 'https://dsgils.github.io/html-css/Exercicio/Tesouro3.html';
+                    
+                    } 
+                
+        else{
+            var sound2 = new Audio('Audio/Audio2.mp3');
+                sound2.play();
+                    
+                        btn2.setAttribute('disabled','disabled');
+                            popup.style.opacity = 0;
+                                popup.setAttribute('class','display_popup');
+                                    popup.style.display = "flex";
+                        setTimeout(() => {
+                            popup.style.opacity = 1;
+                        },0);
+            }
+}
+
+                
+            
+            
+
+                    
+                    
+                    
+function tutorial(){
+    
+    Sound3 = new Audio('Audio/Audio3.mp3');
+    Sound3.play();
+    Sound4.play();
+    Sound4.volume = 0.2;
+    Sound4.loop = true;
+   
+
+        if(tutor.classList.contains('tuto') == true){
+            closetutorial();
+        } else{tutor.classList.add("tuto");
+            tutor.setAttribute('style' , 'animation-name:backAnime');
+                evane.pause();
+                btnTu.setAttribute('disabled', 'disabled'); 
+                btnTu.style.background = "linear-gradient(#999999, #eee)"; 
+                setTimeout(() => {
+                    
+                        closetutorial();
+  
+                        
+
+                                
+                }, 25000);
+                    
+                   
+                        
+
+                            ph0.style.display="flex";
+                        
+                            ph1.style.display="flex";
+
+                            ph2.style.display="flex";
+
+                            
+                        
+                        
+                       
+                            
+                            btn2.setAttribute('disabled','disabled');
+                           
+                        };
+}
+ 
+
+
+ function closetutorial(){
+    if(tutor.classList.contains('tuto') == true){
+            tutor.classList.remove('tuto');
+            Sound4.pause();
+            evane.play();
+            btn2.removeAttribute('disabled','disabled');
+            btnTu.removeAttribute('disabled', 'disabled'); 
+                    btnTu.style.background = "linear-gradient(rgb(235 92 147), rgb(255 255 255)";
+            tutor.style.pointerEvents = "none";
+            tutor.removeAttribute('style' , 'animation-name:backAnime');
+            ph0.style.display="none";
+            ph1.style.display="none";
+            ph2.style.display="none";
+            ph3.style.display="none";
+           
+            
+            
+            
+
+}
+ }
+ function OK(){
+evane.play()
+let user = document.getElementsByName("senha")[0].value = "";
+ popup.style.opacity = 1
+     
+     setTimeout(() => {
+         popup.style.opacity = 0
+         
+             },0)
+
+     setTimeout(() => {
+                 btn2.removeAttribute('disabled', 'disabled');
+                     popup.style.display = "none";
+                         popup.removeAttribute('class','display_popup');
+     }, 1000);        
+             
+
+             };
+             
+
+
+
+
+
+
+
+                  
+                    
+
+             
+    
+               
+            
+        
+    </script>
+  
+   
+</body>
+</html>
+
+
+
+
+

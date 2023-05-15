@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Ina_Juventude</title>
+    <style>
+
+@media only screen and (min-width:800px) and (max-width:10000px){
+    body{
+        display: none;}
+    }
+    @media only screen and (min-width:0px) and (max-width:300px){
+    .NoSuported{
+        display: flex;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        background-color: #000;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #fff;
+    }
+}
+        @media only screen and (min-width:300px) and (max-width:800px) {
+            
+            *{box-sizing: border-box;
+                margin: 0%;
+                
+                font-family: Arial, Helvetica, sans-serif;}
+
+                .textDisplay{
+                    display: none;
+                }
+            #heads{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                
+                width: 100%;
+                height: 350px;
+                background-size: cover;
+                
+            }
+
+            @keyframes starte {
+
+            0%{transform: rotate(0deg);}
+                50%{transform: rotate(360deg)}
+                    100%{transform: rotate(0deg);}
+
+
+
+}
+
+            #logo{
+                
+                animation-delay: 0ms;
+                animation-duration: 9000ms;
+                height: 250px;
+                width: 200px;
+                transition: 9000ms;
+            }
+
+          
+           
+
+            #titler{
+                display: flex;
+                align-items:center;
+                justify-content: center;
+                background-color: transparent;
+                font-size: 40px;
+                font-weight: bold;
+                text-align: center;
+                width: 100%;
+                
+            }
+
+           
+           
+
+            .btn1{
+                width: 95%;
+                font-size: 30px;
+                padding: 10px;
+                font-weight: bold;
+                background-image: linear-gradient(#ffffff,#b8c0c4);
+                transition: 1;
+                }
+            .btn1:hover{
+                background-image: linear-gradient(#ffffff,#6dcdfd);
+                width: 100%;
+            }
+
+            #menu{display: flex;
+                align-items: center;
+                    flex-direction: column;}
+
+            #win_intro , #win_curso , #Insc, #requi{
+            
+                width: 100%;
+                height:0px;
+                background-color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 1s;
+                flex-direction: column;
+            }
+
+          
+
+            #tabReq{
+                transition: 1s;
+                opacity: 0;
+                display: none;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 15px
+            }
+          
+            .winIntro{
+                
+                height:800px !important; 
+                justify-content: flex-start !important;
+            }
+            .winIntro1{
+                
+                height:900px !important; 
+            }
+            .container{
+                height: 100vh !important;
+                position: fixed;
+                top:0px;
+                left: 0px;
+                bottom: 0px;
+                right: 0px;
+            }
+
+            p{  
+                transition: 1s;
+                opacity: 0;
+                display: none;
+                width: 90%;
+                font-size: 25px;
+                color: white;
+                text-align:center;
+                line-height: 40px;
+                margin-top: 25px;
+                flex-direction: column;
+                align-items: center;
+                
+            }
+            #TB{
+                opacity: 0;
+                transition: 1s;
+                display: none;
+                align-items: center;
+                flex-direction: column;
+            margin-top: 15px;}
+
+                #Formulario{
+                opacity: 0;
+                transition: 1s;
+                display: none;
+                align-items: center;
+                flex-direction: column;
+                width: 90%;
+                margin-top: 20px;}
+
+            .foto1{
+                
+                margin:25px;
+                width: 350px;
+                height: 300px;
+            }
+
+            table , th , td{
+                color: white;
+                border:solid 1px white;
+                padding: 2px;
+                text-align: center;
+                
+                
+            }
+            .B{
+                width: 30%;
+            }
+            table{
+                width: 90%;
+                margin-bottom: 30px;
+                font-size: 18px;
+            }
+            th{background-color: #1f1e1e}
+
+            .btnIncricao{
+                color: white;
+                border: solid rgb(122, 122, 122) 2px;
+                font-size: 20px;
+                font-weight:normal;
+                padding: 10px;
+                background-image: linear-gradient(#008800,#009900);
+                width: 90%;
+                text-align: center;
+                
+            }
+            .decorationNone{
+                text-decoration: none;
+            }
+
+            #container{
+                transition:1s;
+                height:0px;
+                width: 100%;
+                background-color: #000;
+                flex-direction: column;
+                }
+
+            #sub{
+                transition: 1s;
+                margin:10px;
+                opacity: 0;
+                display: none;
+                
+            }
+            .Foto{
+                
+                float: left;
+                width: 100px;
+                height:100px;
+                margin: 10px;
+                border:solid 4px white;
+                
+                
+            }
+            .Foto:hover{
+                border:solid 4px rgb(6, 168, 218);
+               
+            }
+
+           
+            footer{
+                
+                width: 100%;
+                height: 200px;
+                background-color: #000;
+                margin-top:20px ;
+                display: flex;
+                align-items: center;
+                
+              
+            }
+
+            .footerInf{
+                cursor: pointer;
+                color: white;
+                font-size: 23px;
+            }
+            .footerInf1{
+                border-bottom:solid 3px #fff;
+                color: white;
+                font-size: 30px;
+            }
+            .logoIna{
+                width: 32%;
+                height:170px;
+                margin-left: 20px;
+                
+            }
+
+            .Infor{
+                width: 68%;
+                height:200px;
+                
+                display: flex;
+                justify-content:space-around;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            #popup{
+                display: none;
+                transition: 1s;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                bottom: 0px;
+                right: 0px;
+                background-color: rgba(0,0,0,0.8);
+                justify-content: center;
+                align-items: center;
+                
+            }
+            #winPopup{
+                width: 90%;
+                height:80vh;
+                background-color: beige;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                
+                
+            }
+           #winPopup2{
+                width: 90%;
+                height:80vh;
+                background-color: beige;
+                
+                display: flex;
+                
+                flex-direction: column;
+                
+                
+            }
+            ol{
+                padding: 5%;
+                font-size: 20px;
+                overflow-y: scroll;
+            }
+
+            #closed{
+                padding: 4px 9px;
+                font-size: 30px;
+                color: white;
+                background-color: red;
+                position: absolute;
+                right: 0px;
+                top:0px;
+            }
+           
+            #expandedImg{
+                min-width: 100%;
+            }
+           
+
+
+            .sub{
+                display: flex !important;
+                margin-left: 10px !important;
+                overflow-x:scroll ;
+                
+                
+            }
+            #mover{
+                display: none;
+                width: 100%;
+                height: 40px;
+                color:#000;
+                font-size: 30px;
+                background-color: #b8c0c4;
+                justify-content: center;
+            }
+            #galery{
+                
+                display: none;
+                width: 100%;
+                height: 40px;
+                color:white;
+                font-size: 30px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                
+            }
+            .textGalery{
+                width: 90%;
+                text-align: center;
+                padding-left:10%;
+            }
+            .btnX{
+                width: 10%;
+                background-color: red;
+                padding: 5px 10px;
+            }
+            #leftwindow{
+                position: fixed;
+                top:0px;
+                right: 0px;
+                height: 100vh;
+                width: 60px;
+                transition: 1s;
+                display: flex;
+                
+            }
+            .buttonArea{
+                width: 60px;
+                height: 60px;
+                margin-right: 10px;
+               
+                
+                
+                
+            }
+            #textArea{
+                width: 100%;
+                height: 100vh;
+                background-color: wheat;
+                
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .botaos{
+                
+                max-width:250px;
+                min-width:250px;
+                padding:10px;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            #buttons{
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                transition: 1s;
+            }
+            .clasWin{
+                width: 350px !important;
+            }
+            strong{
+                width: 100%;
+                padding: 10px;
+                background-color: #6dcdfd;
+                text-align: center;
+                font-size: 30px;
+                margin-bottom: 50px;
+            }
+            #containerS{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+            #number1, #number2 {
+                font-size: 30px;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #email{
+                font-size: 15px;
+                font-weight: bold;
+            }
+            .zap{
+                width: 40px;
+                float: left;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            u{
+                font-size: 20px;
+                font-weight: bold;
+               
+            }
+
+       
+        input{
+            height: 40px;
+            margin-top: 10px;
+            font-size: 25px;
+            
+        }
+
+        td{
+            
+            flex-direction: column;
+            margin-top: 10px;
+           
+        }
+        #display_black2{
+            position: fixed;
+            top:0px;
+            left:0px;
+            bottom: 0px;
+            right: 0px;
+            background-color: #000;
+            display:none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: ease 200ms;
+        }
+        .textInfor{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        #Yes, #No{
+            font-size: 30px;
+            background-color: transparent;
+            color: #fff;
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-top: 10px;
+            width: 100px;
+
+        }
+        .tds{
+            font-size: 19px;
+            padding: 5px;
+            
+        }
+        #date{
+            width: 100%;
+        }
+       
+            }
+            
+       
+    </style>
+</head>
+<body>
+    <div class="NoSuported">
+        <div class="textDisplay">Display não Suportado.</div>
+        </div>
+
+    <div id="display_black2">
+        
+        <table id="formularioVeri">
+            <tr>
+                <th style="font-size: 25px;">Confirmação de dados</th>
+            </tr>
+            <tr>
+                <td class="tds">Nome Completo<div id="nomeCompleto" style="font-size: 25px;">joao barbosa</div></td>
+            </tr>
+            <tr>
+                <td class="tds">Nascimento<div id="nasciMento" style="font-size: 25px">25/02/1997</div></td>
+            </tr>
+            <tr>
+                <td class="tds">Contato<div id="teleFone" style="font-size: 25px" >81900000000</div></td>
+            </tr>
+            <tr>
+                <td class="tds">Rua e número<div id="Rua" style="font-size: 25px">novembro</div></td>
+            </tr>
+            <tr>
+                <td class="tds">Cidade<div id="Cidade" style="font-size: 25px">Jaboatao</div></td>
+            </tr>
+        </table>
+        <div class="textInfor" style="color:#fff">As informações estão corretas?</div>
+        
+        <div >
+            <button onclick="ExitBlack2()" id="No">Não</button>
+            <a  href="https://api.whatsapp.com/send?phone=5581997072663&text=Olá, Segue meus dados para realização do cadastro nome:" onclick="ur(),location.href=this.href+' '+val+'.'+' '+ 'Nascimento:'+' '+va2+'.'+' '+'Telefone:'+' '+va3+'.'+' '+'Endereço:'+va4+'.'+' '+va5+'.'+'  '+' '+' '+ 'E tenho interesse em saber sobre a localização.';return false;"><button id="Yes">Sim</button></a>
+        </div>
+    </div>
+   
+    <div id="leftwindow">
+        <img id="imgbutton" src="Imagens/menu.png" class="buttonArea" onclick="opencloser()">
+        <div id="textArea">
+            <div class="Bt1" style="color:#fff;font-size: 30px;text-align: center;margin-bottom: 20px;">Menu</div>
+            <div id="buttons">
+            <a><button onclick="Alerta()" class="botaos">Aula de Musica</button></a>
+            <a><button class="botaos" disabled >TIME LINE</button></a>
+            <a><button class="botaos" disabled >VIDEO AULA</button></a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div id="popup">
+        <div id="closed" onclick="fechar()">X</div>
+        <span id="winPopup2">
+            <strong>Contato</strong>
+            <div id="containerS" style="height: 400px;">
+            <a><img class="zap" src="Imagens/whatsapp.png"><div id="number1">(81)9.*********</div> <u id="mostrar1" onclick="exibirNumber1()">Mostrar</u></a>
+            <a><img class="zap" src="Imagens/whatsapp.png"><div id="number2">(81)9.*********</div> <u id="mostrar2" onclick="exibirNumber2()">Mostrar</u></a>
+            <a id="email" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=VpCqJTBxnZnvVVqZZdxkVXNgwfzMwknLngVwXJWfxGRmRBrlQdFFrwKfJlhFDFpwlZQGhmL"><img class="zap" src="Imagens/Gmail.png">inaescolamusical@gmail.com</a>
+        </div>
+        </span>
+
+        <div id="winPopup">
+            <ol style="font-weight: bold; font-size:25px;">Igreja Nova Apostólica</ol>
+            <ol>É uma igreja cristã internacional. A base da sua doutrina é a Sagrada Escritura. Surgiu em 1863 oriunda da Congregação Católica-Apostólica e desde então, assim como também nas primeiras comunidades cristãs, é conduzida por Apóstolos.<br><br>Define-se como a Igreja de Cristo, igual às congregações apostólicas no tempo dos primeiros Apóstolos. A Sagrada Escritura, assim como a palavra atual, inspirada pelo Espírito Santo, formam em comum a base do ensino, a qual é dirigida a anunciar o plano de salvação de Deus e preparar almas crentes para o prometido retorno de Cristo.<br><br>
+            A Igreja Nova Apostólica promove o curso 'Projeto Ina' e oferece aulas de música gratuita para as pessoas. Pois acreditamos que a música tem o poder de impactar de forma positiva a vida das pessoas em vários aspectos e decidimos contribuir para a sociedade dando aulas de música para quem precisa. E hoje nosso projeto conta com aulas gratuitas, para varias pessoas.<a href="https://www.inasud.org/pt/institucional.php" >Saber mais.</a> </ol>
+
+        </div>
+
+    </div>
+
+    <div id="heads">
+        <img onclick="song1()" id="logo" src="Imagens/Logo3.png">
+        <div id="titler">Serviço Divino<br>Para Juventude</div>
+    </div>
+
+    <div id="menu">
+    
+       <!------------------------------ button intro 1----------------------------------->
+        
+        <button onclick="startIntro()" class="btn1">INICIO</button>
+            
+            <div id="win_intro"> <p id="P1"> Bem Vindo!<br>Você Sabia que a música tem<br> o poder de impactar de forma <br>positiva a vida das pessoas em vários aspectos.<br><br> Com esse projeto da Ina Escola<br> de Musica temos a oportunidade<br> de contribuir para a sociedade,<br> dando aulas de música para <br> quem precisa. E hoje nosso<br> projeto conta com aulas <br> gratuitas, para varias pessoas.<img class="foto1" src="Imagens/img1.jpg"></div></p>
+                
+                
+        
+        <!------------------------------ button curso 2 ----------------------------------->
+        
+        <button onclick="startCurso()" class="btn1">CURSO</button>
+        
+            <div id="win_curso" >
+
+            <div id="TB">   <table>
+                    <tr>
+                        <th>Curso</th>
+                        <th>Dia</th>
+                        <th>Hora</th>
+                    </tr>
+
+                    <tr>
+                        <td class="B">Teórico e <br> Prática</td>
+                         <td class="B">Toda <br>Quinta Feira</td>
+                          <td class="B">17:00 as 19:00</td>
+                           
+                    </tr>
+
+                    
+
+
+
+                </table>
+                <table>
+                     <tr>
+                        <th>Duração do Curso</th>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>1 Ano</td>
+                         
+                           
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th>Matérial Necessário</th>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>Você recebe uma apostila gratuita<br> </td>
+                    </tr>
+                    <tr>
+                        <td>Ficando somente a pasta catalógo <br>por conta do aluno<br> </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>Instrumentos</th>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>Violão</td>
+                    </tr>
+                    <tr>
+                        <td>Violino</td>
+                    </tr>
+                    <tr>
+                        <td>Teclado</td>
+                    </tr>
+                    <tr>
+                        <td>Flauta Doce</td>
+                    </tr>
+                    <tr>
+                        <td>Flauta Transversal</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <th>Atenção!<br>Não é Necessário ter o instrumento <br> logo de inicio para participar das aulas.</th>
+                        
+                    </tr>
+
+                </table>
+
+            </div> 
+
+
+
+
+
+
+
+            </div>
+        
+
+            <button  class="btn1" onclick = "startRoom()">REQUISITOS</button>
+
+            <div id="requi">
+
+                <div id="tabReq">
+                <table>
+                    <th>Quem pode Participar</th>
+                    <tr>
+                        <td>Crianças - no minimo 10 anos acompanhado por responsavel</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Jovens - de até 15 anos</td>
+                    </tr>
+                    <tr>
+                        <td>Adultos - com idade entre 16 até 64 anos;</td>
+                    </tr>
+                    
+                </table>
+                <table>
+                    <th>Para participar</th>
+                    <tr>
+                        <td>Deve enviar os dados requeridos na ultima seção </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Estar regularmente matriculado no curso </td>
+                    </tr>
+                    <tr>
+                        <td>Ter disponibilidade toda quinta-feira para dedicar <br>2 (horas) horas semanais às atividades do Curso.</td>
+                    </tr>
+                    <tr>
+                        <td>Deve Residir nas proximidades, ou ter <br> acessibilidade para se deslocar até<br> o local do curso, localizado proximo<br> ao shopping Guararapes.</td>
+                    </tr>
+                    
+                </table>
+
+                <table>
+                    <th>Atenção!<br>
+                        A localização exata só será divulgada após a inscrição do aluno.</th>
+                    
+                    
+                </table>
+            </div>
+
+
+
+
+
+
+            </div>
+            
+            
+            
+            <button onclick="startMidia()"  class="btn1">MIDIA</button>
+
+            <div id="container">
+                
+                <div id="galery" onclick="galeria()">
+                    
+                    <div class="textGalery">Galery</div>
+                    <div class="btnX">X</div>
+            
+            
+                </div>
+                <div id="mover">- Mover -</div>
+                <div id="sub">
+                <img onclick="myFunction(this)" class="Foto" src="Imagens/img0.jpg" >
+                <img onclick="myFunction(this)" class="Foto" src="Imagens/img2.jpg" >
+                <a href="#pulo"><img onclick="myFunction(this)" class="Foto" src="Imagens/img3.jpg"></a>
+                <img onclick="myFunction(this)" class="Foto" src="Imagens/img4.jpg" >
+                <a href="#pulo2"><img id="pulo" onclick="myFunction(this)" class="Foto" src="Imagens/img5.jpg" ></a>
+                <img onclick="myFunction(this)" class="Foto" src="Imagens/img6.jpg" >
+                <img id="pulo2" onclick="myFunction(this)" class="Foto" src="Imagens/img7.jpg" >
+            </div>
+
+            <div id="exapandedClose">
+            <img id="expandedImg">
+            </div>
+            
+            </div>
+
+
+
+
+
+
+        <!------------------------------ button inscrição 2 ----------------------------------->
+        
+        <button onclick="startInsc()" class="btn1">INSCRIÇÃO</button>
+            
+        <div id="Insc">
+            <form id="Formulario">
+            <table>
+                <th>Para realizar o cadastro, você deverá informar seus dados</th>
+                <tr>
+                    <td>Nome Completo <input type="text" name="usuario" maxlength="40"  placeholder="Responda aqui" oninput="this.value = this.value.replace(/[^a-z A-Z ã Ã â Â ç Ç á é í Á É Í À è ì À È Ì ê Ê ú Ù ù Ú ó Ò ô Ô]/g, '')"></td>
+                </tr>
+                
+                <tr>
+                    <td>Idade <input id="date" type="date" name="ano" value="2000-01-01"></td>
+                </tr>
+                <tr>
+                    <td>Telefone <input type="text" name="telefone" placeholder="81900000000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="11"></td>
+                </tr>
+                <tr>
+                    <td>Endereço <input type="text" name="lagradouro" maxlength="30" placeholder="Nome da Rua, + n°" oninput="this.value = this.value.replace(/[^a-z A-Z 0-9 ã Ã â Â ç Ç á é í Á É Í À è ì À È Ì ê Ê ú Ù ù Ú ó Ò ô Ô ]/g, '')"></td>
+                </tr>
+                <tr>
+                    <td>Cidade <input type="text" name="cidade" maxlength="30" placeholder="Cidade - UF" oninput="this.value = this.value.replace(/[^a-z A-Z ã Ã â Â ç Ç á é í Á É Í À è ì À È Ì ê Ê ú Ù ù Ú ó Ò ô - Ô ]/g, '')"></td>
+                </tr>
+                
+            </table>
+            <table>
+                <th>Click no Botão e Faça sua<br> Inscrição Agora!</th>
+            </table>
+
+            
+           <a class="decorationNone" onclick="finish()"> <botton class="btnIncricao" id="action">FAZER INSCRIÇÃO</botton></a>
+        </form>
+
+        </div>
+        
+        
+        </div>
+
+       
+  <!---------------------------------------Rodape---------------------------------------------------->
+    <footer id="foot">
+
+        <img src="Imagens/Logo2.png" class="logoIna" ></img>
+        <div class="Infor">
+            <a class="footerInf1">Institucional</a>
+            <a class="footerInf" onclick="abrir()">Quem Somos</a>
+            <a class="footerInf1">Atendimento.</a>
+                <a onclick="OpenDisplay()" class="footerInf">Fale Conosco</a>
+            
+        </div>
+        
+    </footer>
+
+
+    <div style="height: 2000px;
+     width: 100%; background-color: #000;
+      display: flex; justify-content: center;
+       align-items: center; color: #fff;
+       font-size: 20px;">
+        Não tem oque olhar aqui.
+    </div>
+
+    <script>
+
+        function ur(){
+             val = document.getElementsByName("usuario")[0].value;
+             va2 = document.getElementById("date").value;
+             va3 = document.getElementsByName("telefone")[0].value;
+             va4 = document.getElementsByName("lagradouro")[0].value;
+             va5 = document.getElementsByName("cidade")[0].value;
+             
+        }
+           
+                
+                    
+                
+                
+                
+               
+                
+                
+
+
+        function song1 () {
+            var anime = document.getElementById("logo");
+            logo.setAttribute('style','animation-name:starte');
+            logo.style.pointerEvents= "none"
+            setTimeout(() => {
+                logo.removeAttribute('style','animation-name:starte');
+                logo.style.pointerEvents= "auto" 
+            }, 9000);
+          var song = new Audio('Audio/Song1.mp3');
+            song.play();
+            song.volume = 0.2;
+            
+        }
+
+function sound(){
+    new Audio('Audio/Audio3.mp3').play()
+}
+
+        var curso = document.getElementById("win_curso")
+        var intro = document.getElementById("win_intro")
+        var T1 = document.getElementById("P1");
+        var tabela = document.getElementById("TB");
+        var inscricao = document.getElementById("Insc");
+        var Form = document.getElementById("Formulario");
+        var Midia = document.getElementById("container");
+        var Sub = document.getElementById("sub");
+        var jnl = document.getElementById("requi");
+        var Req = document.getElementById("tabReq");
+        var foote = document.getElementById("foot");
+        var popup = document.getElementById("popup");
+        var btnGalery = document.getElementById("galery");
+        var btnMove = document.getElementById("mover");
+        var exapandedClose = document.getElementById("exapandedClose");
+        var opWin = document.getElementById("leftwindow");
+        var areatext = document.getElementById("textArea");
+        var bts = document.getElementById("buttons");
+        var but = document.querySelectorAll(".btn1");
+        var SubPopup = document.getElementById("winPopup");
+        var Number1 = document.getElementById("number1");
+        var Number2 = document.getElementById("number2");
+        var mostrar1 = document.getElementById("mostrar1");
+        var mostrar2 = document.getElementById("mostrar2");
+        var win2 = document.getElementById("winPopup2");
+        var displaytwo = document.getElementById("display_black2");
+
+        
+       
+    
+       function ExitBlack2(){
+        startInsc()
+        displaytwo.style.display = "none"
+       } 
+        
+
+        function finish(){
+            let nome = document.getElementsByName("usuario")[0].value;
+            
+            let fone = document.getElementsByName("telefone")[0].value;
+            let lagradouro = document.getElementsByName("lagradouro")[0].value;
+            let cidade = document.getElementsByName("cidade")[0].value;
+            
+
+            if(nome.length < 6 || lagradouro.length < 4 || fone.length < 11 || cidade < 5)
+            
+            {
+                alert('Erro! - Preencha os campos corretamente.')
+            }
+            
+            else{
+                startInsc()
+                displaytwo.style.opacity = 0;
+                displaytwo.style.display = "flex";
+                setTimeout(() => {
+                    displaytwo.style.opacity = 1
+                }, 200);
+                var dat = document.getElementById("date").value;
+                document.getElementById("nasciMento").innerHTML = dat;    
+            
+            document.getElementById("nomeCompleto").innerHTML = nome;
+            document.getElementById("teleFone").innerHTML = fone;
+            document.getElementById("Rua").innerHTML = lagradouro;
+            document.getElementById("Cidade").innerHTML = cidade;
+            }
+        }
+       
+        function whatsapp(){
+            window.location = 'https://api.whatsapp.com/send?phone=5581997072663&text=Olá, Me chamo {{nome}} %C3%A1,%20Quero%20Fazer%20Minha%20Inscri%C3%A7%C3%A3o.';
+        }
+
+         
+        
+        
+        function Alerta(){
+            alert('Menu Ainda esta sendo desenvolvido')
+        }
+        
+        function opencloser(){
+            sound();
+            if(opWin.classList.contains("clasWin") == true){
+                opWin.classList.remove("clasWin");
+                bts.style.display = "none";
+                
+                for (let i = 0; i < but.length; i++) {
+                    but[i].removeAttribute('disabled','disabled')}
+                
+                
+                
+               
+                
+            } else{
+                opWin.classList.add("clasWin")
+                bts.style.opacity = 0
+                bts.style.display = "flex";
+                
+                
+                for (let i = 0; i < but.length; i++) {
+                    but[i].setAttribute('disabled','disabled');
+}
+
+                setTimeout(() => {
+                    bts.style.opacity = 1
+                }, 1000);
+                
+            }
+        }
+
+        function startIntro(){
+            
+            
+            sound();
+                if(intro.classList.contains("winIntro1")==true){
+                    intro.classList.remove("winIntro1");
+                        window.scrollTo(0,0);
+                        menuButton2()
+                            T1.style.opacity = 1
+                            
+                setTimeout(() => {
+                    T1.style.opacity = 0;
+                    
+                    T1.style.display = "none";
+                }, 0);
+           
+                } else{
+                    intro.classList.add("winIntro1");
+                        window.scrollTo(0, 350);
+                        menuButton()
+                        
+
+                            T1.style.opacity = 0;
+                           
+                                T1.style.display = "flex";
+                                    setTimeout(() => {
+                                        T1.style.opacity = 1;
+                                       
+                }, 1000);}}
+
+ //----------------------------------funcion Curso------------------------------------------------//               
+
+function startCurso(){
+    sound();
+            intro.classList.remove("winIntro1");
+            T1.style.opacity = 1
+                
+                setTimeout(() => {
+                    T1.style.opacity = 0;
+                    T1.style.display = "none";
+                }, 0);
+            //-----------------------------------------------------------------------------//
+                
+
+                if(curso.classList.contains("winIntro")==true){
+                    curso.classList.remove("winIntro");
+                        window.scrollTo(0,0);
+                        menuButton2()
+                        tabela.style.opacity = 1
+                
+                setTimeout(() => {
+                    tabela.style.opacity = 0;
+                    tabela.style.display = "none";
+                }, 0);
+           
+                } else{
+                    curso.classList.add("winIntro");
+                        window.scrollTo(0, 410);
+                        menuButton()
+
+                        
+                        tabela.style.opacity = 0
+                        tabela.style.display = "flex";
+                                    setTimeout(() => {
+                                        tabela.style.opacity = 1
+                }, 1000);}}
+
+        
+        
+        
+        
+       
+ //___________________________________Requesito_____________________________________________//
+
+        
+ function startRoom(){
+    sound();
+            
+    curso.classList.remove("winIntro");
+                        
+                        tabela.style.opacity = 1
+                
+                setTimeout(() => {
+                    tabela.style.opacity = 0;
+                    tabela.style.display = "none";
+                }, 0);
+
+            if(jnl.classList.contains("winIntro")==true){
+                jnl.classList.remove("winIntro");
+                    window.scrollTo(0,0);
+                    menuButton2()
+                        Req.style.opacity = 1
+            
+            setTimeout(() => {
+                Req.style.opacity = 0;
+                Req.style.display = "none";
+            }, 0);
+       
+            } else{
+                jnl.classList.add("winIntro");
+                    window.scrollTo(0, 470);
+                    menuButton()
+
+                    
+
+                    Req.style.opacity = 0
+                    Req.style.display = "flex";
+                                setTimeout(() => {
+                                    Req.style.opacity = 1
+            }, 1000);}}
+
+
+
+    //___________________________________Midia_____________________________________________//
+     function startMidia(){
+        sound();
+                jnl.classList.remove("winIntro");
+                Req.style.opacity = 1
+            
+                setTimeout(() => {
+                Req.style.opacity = 0;
+                Req.style.display = "none";
+            }, 0);
+            //-----------------------------------------------------------------------------//
+                
+
+                if(Midia.classList.contains("container")==false){
+                    Midia.classList.add("container");
+                    menuButton()
+                        window.scrollTo(0,525);
+                        Sub.style.opacity = 0;
+                         btnGalery.style.display = "flex";
+                    btnMove.style.display = "flex";
+                    Sub.style.display = "block";
+                
+                setTimeout(() => {
+                   
+                    Sub.style.opacity = 1;
+                }, 1000);
+           
+                } }
+
+                
+                function galeria(){
+                if(Midia.classList.contains("container")==true){
+                    Midia.classList.remove("container");
+                    Sub.classList.remove('sub')
+                        window.scrollTo(0, 0);
+                        menuButton2()
+                        
+                        
+
+                        
+                        Sub.style.opacity = 0
+                        
+                        exapandedClose.style.display = "none";
+                        Sub.style.display = "none";
+                        btnGalery.style.display = "none";
+                        btnMove.style.display = "none";
+                                    setTimeout(() => {
+                                        Sub.style.opacity = 0
+                }, 1000);}}
+
+
+
+
+
+
+
+
+
+                //___________________________________Inscrição_____________________________________________//
+     function startInsc(){
+        sound();
+        var music = new Audio('Audio/evane2.mp3');
+        music.play();
+        music.volume = 0.2
+        
+        Midia.classList.remove("winIntro");
+        Sub.style.opacity = 1;
+                
+                setTimeout(() => {
+                    Sub.style.opacity = 0;
+                    Sub.style.display = "none";
+                }, 0);
+            //-----------------------------------------------------------------------------//
+                
+
+                if(inscricao.classList.contains("winIntro")==true){
+                    inscricao.classList.remove("winIntro");
+                        window.scrollTo(0,0);
+                        menuButton2()
+                        Form.style.opacity = 1
+                
+                setTimeout(() => {
+                    Form.style.opacity = 0;
+                    Form.style.display = "none";
+                }, 0);
+           
+                } else{
+                    inscricao.classList.add("winIntro");
+                        window.scrollTo(0, 580);
+                        menuButton()
+
+                        
+                        Form.style.opacity = 0
+                        Form.style.display = "flex";
+                                    setTimeout(() => {
+                                        Form.style.opacity = 1
+                }, 1000);}}
+
+                function fechar(){
+                    
+                    popup.style.opacity = 1
+                    win2.style.opacity = 1;
+                        setTimeout(() => {
+                            popup.style.opacity = 0;
+                           
+                            setTimeout(() => {
+                                popup.style.display = "none"
+                                win2.style.display = "none"
+                                SubPopup.style.display = "flex"
+                            }, 1500);
+                            
+                        }, 500);
+                   
+                }
+
+
+                function abrir(){
+                    win2.style.display = "none"
+                    popup.style.opacity = 0;
+                    popup.style.display = "Flex"
+                        setTimeout(() => {
+                            popup.style.opacity = 1;
+                            
+                        }, 300);
+                   
+                }
+
+                function OpenDisplay(){
+                    SubPopup.style.display = "none"
+                    popup.style.opacity = 0;
+                    win2.style.display = "Flex"
+                    popup.style.display = "Flex"
+                        setTimeout(() => {
+                            popup.style.opacity = 1;
+                            
+                        }, 300);
+                }
+
+
+
+                
+function myFunction(imgs) {
+
+    if(Sub.classList.contains("sub")==false){
+        Sub.classList.add("sub")
+    }
+
+    var expandImg = document.getElementById("expandedImg");
+  
+    expandImg.src = imgs.src;
+ 
+    expandImg.parentElement.style.display = "flex";
+}
+        
+
+function menuButton(){
+    opWin.style.display = "none"
+}
+
+function menuButton2(){
+    opWin.style.display = "flex"
+}
+
+function exibirNumber1(){
+    Number1.innerHTML="(81)9.8830-6753"
+    mostrar1.innerHTML = "ocultar"
+    setTimeout(() => {
+        Number1.innerHTML="(81)9.*********"
+    mostrar1.innerHTML = "Mostrar"
+    }, 40000);
+}
+
+function exibirNumber2(){
+    Number2.innerHTML="(81)9.9707-2663"
+    mostrar2.innerHTML = "ocultar"
+    setTimeout(() => {
+        Number2.innerHTML="(81)9.*********"
+        mostrar2.innerHTML = "Mostrar"
+    }, 40000);
+}
+    </script>
+</body>
+
+</html>

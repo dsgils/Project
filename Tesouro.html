@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça Tesouro</title>
+    
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    @media only screen and (max-width:500px){
+   #title{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    background-color: #000;
+    
+   }
+   h1{
+    color:#fff;
+    font-size: 30px;
+    }
+
+   #logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 120px;
+   }
+   
+   #titulo{
+    
+    width: 70%;
+    height:120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 50px;
+   }
+   #display_black ,#OuroPopup{
+    position: fixed;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    }
+   .display_popup{
+    transition: ease 1s;
+    position:absolute;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display:none;
+    justify-content: center;
+    align-items: center;
+    
+    
+   }
+   .SubDisplay , .Sub_Ouro{
+    width: 90%;
+    height: 300px;
+    border: solid 6px white;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   #intro, p{
+    font-size: 32px;
+    font-weight:bold;
+    color: #000;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+   #formulario{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+
+   }
+   input , .btnok{
+    width: 90%;
+    height: 50px;
+    font-size: 32px;
+    
+    
+    
+   }
+   .VideoArea{
+    margin: auto;
+    width: 90%;
+    height: 350px;
+    background-color: #000;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 10px white;
+    border-radius:5px
+   }
+   #senha , #btn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    
+}
+    #senha{
+        outline: solid 2px;
+        animation-name: liner;
+        animation-iteration-count: infinite;
+        animation-delay: 0ms;
+        animation-duration: 3s;
+        margin: 10px auto 10px auto;
+    }
+   @keyframes liner {
+    0% {outline-color: red}
+    50% {outline-color: transparent}
+    100% {outline-color: red}
+   }
+
+   #DualButton{
+    display: none;
+    width: 90%;
+   }
+   .btnN, .btnS{
+    width: 50%;
+    height: 50px;
+    margin:10px 0px 0px 0px;
+    font-size: 25px;
+    font-weight: bold;
+   }
+   .btnN{
+    margin-right: 10px;
+   }
+   .btnS{
+    margin-left: 10px;
+   }
+   #bote{margin-top: 10px;}
+   
+   }
+   video{
+    display: none;
+   }
+   .img1{
+    width: 100%;
+    height: 100%;
+    animation-name: ouro;
+    animation-duration: 3s;
+    animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    
+   }
+   body{
+    background-image: url(Imagens/festa\ tema.jpg);
+    background-position:left;
+    background-size: 3000px;
+    background-repeat: no-repeat;
+   }
+   @keyframes ouro {
+        0%{width:100%; height: 110px;}
+        50%{width:90% ; height: 95px;}
+        100%{width:100%; height: 110px;}
+   }
+
+   #tuto{
+    background-image: url(https://i0.wp.com/www.multarte.com.br/wp-content/uploads/2019/02/festa-fundo-flyer4.jpg?fit=696%2C510&ssl=1);
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size:2000px;
+    height: 100vh;
+    width:0px ;
+    position: absolute;
+    right:0px;
+    transition:ease 1s;
+    pointer-events: none;
+    animation-duration: 40s;
+    animation-delay: 0ms;
+    border: solid 0px transparent;
+   }
+   .tuto{
+    width: 100% !important ;
+    border: solid 5px #000 !important;
+   }
+
+   @keyframes imag {
+        0%{width:100%}
+        50%{width:93%}
+        100%{width:100%}
+   }
+
+   .imag{
+        width: 100%;
+        height: 180px;
+        background-image: url(https://static.vecteezy.com/system/resources/previews/001/201/729/original/birthday-text-png.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin:auto;
+        animation: imag;
+        animation-duration: 2s;
+        animation-delay: 0ms;
+        animation-iteration-count: infinite;
+   }
+   
+   #h3, #p1, #p2 , #p3{
+    opacity: 0;
+    display:none;
+    position: absolute;
+    background-color: #000;
+    border:solid 4px #999999;
+    color:#fff;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    animation-name: mov;
+    transition: ease 30s;}
+
+    #h3{
+        animation-duration: 15s;
+            animation-delay: 0s;}
+
+    
+    
+    #p1{
+        animation-name: mov1;
+            animation-duration: 15s;
+                animation-delay: 4s;}
+
+    #p2{
+        animation-delay: 13s;
+            animation-duration: 20s;
+    }
+
+    
+    #p3{ 
+        animation-name: mov1;
+            animation-delay: 18s;
+                animation-duration: 20s;
+    }
+
+    @keyframes mov {
+        0% {left:-600px ; top:600px ;opacity: 0;width:350px}
+        10% { }
+        20% {left:50px; top:600px; opacity: 1;}
+        40% {left:50px}
+        50% {left:50px; top:200px; }
+        60% {left:50px}
+        80% {left:50px;width:340px; opacity: 1;top:200px;}
+        100% {left:-600px; top:350px;width: 100px; opacity: 0;}
+        
+    }
+    @keyframes mov1 {
+        0% {left:-600px ; top:600px ;opacity: 0;width:350px}
+        10% { }
+        20% {left:30px; top:600px; opacity: 1;}
+        40% {left:30px}
+        50% {left:50px; top:350px; }
+        60% {left:50px; top:350;}
+        80% {left:50px;width:350px; opacity: 1; top:300px;}
+        90% {left:50px;width:350px; opacity: 1; top:200px;}
+        100% {left:-600px; top:500px;width: 100px; opacity: 0;}
+        
+    }
+    
+    @keyframes backAnime {
+        0% {background-size:2000px;}
+        10% {background-size:2500px;}
+        20% {background-size:1500px;}
+        40% {background-size:2000px;}
+        50% {background-size:2500px;}
+        60% {background-size:1500px;;}
+        80% {background-size:2000px;}
+        90% {background-size:1300px;}
+        100% {background-size:5000px;}
+        
+    }
+    
+    
+
+    #tempo{
+        
+        position: absolute;
+        color:white;
+        font-size: 150px;
+        font-weight: bold;
+        transition: ease 1s;
+        
+    }
+    #btnTuto{
+        width: 100%;
+        background: linear-gradient(#999999, #eee);
+        font-size: 30px;
+        padding: 10px 50px 10px 50px;
+        text-align: center;
+        color:black;
+        border: solid #555 2px;
+        
+    }
+
+    h4{
+        color: black;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .OuroImg{
+        width: 80%;
+            height: 80%;
+             
+    }
+
+    .fechar{
+        padding: 5px 10px 5px 10px;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        color: white;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        font-size:40px
+    }
+    #display_Vol_Inf{
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        top:0px;
+        background-color: #fff;
+        display: none;
+        transition: 1s;
+        align-items: center;
+        justify-content: center;
+    }
+    #Vol{
+        width: 100%;
+    }
+</style>    
+</head>
+
+<body>
+
+    
+    <div id="display_Vol_Inf">
+        <img id="Vol" src="Imagens/volume.png">
+    </div>
+
+    <div id="OuroPopup" style="display:none">
+        <div class="fechar" onclick="Fechar()" >X</div>
+        <div class="Sub_Ouro">
+            <img class="OuroImg" src="Imagens/Bau.png">
+            <h4 id="Failed" >não foi dessa vez</h4>
+
+        </div>
+
+
+    </div>
+    
+    
+    <div id="tuto" onclick="tutorial()" disabled>
+        <div class="imag" ></div>
+         <h3 id="h3">Erro!</h3>
+        <div id="p1">Erro!</div>
+        <div id="p2">Vamos disponibilizar um video para você. ao final do video vamos exibir uma senha de acesso.</div>
+        <div id="p3">Siga Caçando o seu Tesouro até o final, e Consiga todas as Chaves para brir o Baú. Boa Sorte!</div>
+    </div>
+
+    
+    
+    
+    <div id ="display_popup" style="display: none;" >
+        <div class="SubDisplay" > <p id="">Aviso! Senha incorreta, Assista ao video primeiro</p>
+            <button onclick ="OK()" class="btnok">OK</button>
+    </div>
+      
+
+    </div>
+
+    <div id="display_black">
+        <div class="SubDisplay">
+            <p id="intro">Olá, para começar <br> digite seu primeiro <br> nome.</p>
+            <div id="formulario">
+                <input id="userr" type="text" name="Usuario"  placeholder="Digite Seu Nome" maxlength="15" autofocus oninput="this.value = this.value.replace(/[^a-z A-Z ã Ã â Â ç Ç á é í Á É Í À è ì À È Ì ê Ê ú Ù ù Ú ó Ò ô - Ô ]/g, '')">
+                    <input id="bote" type="button" value="Enviar" name="bot" onclick="start()" style = "text-align: center;">
+                        <div id="DualButton">
+                            <button onclick="N()" class="btnN">NÂO</button>
+                            <button onclick ="S()" class="btnS">SIM</button>
+                        </div>
+                        
+            
+            </div>
+        </div>
+    </div>
+    
+    <div id ="title">
+        
+        <div id="logo"> <img onclick="ClickSound()" class="img1" src="Imagens/Treasure.png" ></div>
+            <div id="titulo" style="color: #fff;"><h1 id="h1">CAÇA TESOURO</h1></div>
+    
+        </div>
+
+
+        <button id="btnTuto" disabled onclick="tutorial()" >Introdução</button>
+    
+    
+    
+    <div class="VideoArea">
+        <div id="tempo"></div>
+        <video controls  id="vid" width="100%" height="100%">
+            
+            <source src="Video/Untitled.mp4" type="video/mp4">
+           
+        </video>
+
+    </div>
+    
+    
+    
+    
+    <input id="senha" type="text" name="senha" placeholder="Digite a senha" maxlength="8">
+        <input id="btn2" disabled type="button" onclick="envia()" value="Confirmar" >
+
+    
+    
+    
+    <audio id="audios" autoplay preload="auto" style="display: none;" loop>
+        
+        <source src="Audio/Evanescenc.mp3" type="audio/mp3">
+
+    </audio>
+
+   
+<script>
+    
+
+      
+var btn0 = document.getElementsByName("bot");
+var intro = document.getElementById("intro");
+var tela = document.getElementById("display_black");
+var bote = document.getElementById("bote");
+var dual = document.getElementById("DualButton");
+var popup = document.getElementById("display_popup");
+var tutor = document.getElementById("tuto");
+var ph0 = document.getElementById("h3");
+var ph1 = document.getElementById("p1");
+var ph2 = document.getElementById("p2");
+var ph3 = document.getElementById("p3");
+var VD = document.getElementById("vid");
+var btn2 = document.getElementById("btn2");
+var OuroPopup = document.getElementById("OuroPopup");
+var som = document.getElementById("audios");
+var titulo = document.getElementById("h1");
+var btnIntroducao = document.getElementById("btnTuto");
+var Sound4 = new Audio('Audio/Audio4.mp3');
+Sound3 = new Audio('Audio/Audio3.mp3');
+
+
+
+function Fechar(){OuroPopup.style.display="none"; som.play(); VD.play();VD.style.opacity="1"}      
+
+function ClickSound(){
+let TextPopup = document.getElementById("Failed")
+TextPopup.innerHTML = "Você ainda não tem a chave do baú," + " " + user +","+ " " + "tenha mais paciência."
+var sound1 = new Audio('Audio/Audio1.mp3');
+sound1.play();
+OuroPopup.style.display = "flex";
+som.pause();
+VD.pause();
+VD.style.opacity="0"
+}     
+
+user = document.getElementsByName("Usuario")[0].value;
+
+function start(){
+    Sound3.play();
+let user = document.getElementsByName("Usuario")[0].value;
+    
+ if(user.length < 3 ){
+             
+     alert('precisa ter no minimo 3 caracteres')
+         
+ } else{
+     intro.innerHTML = "Seu nome é" + " " + user + "?";
+         bote.style.display = "none";
+             dual.style.display = "flex";
+                 userr.setAttribute("disabled" , "disabled");
+                    localStorage.setItem('valueText', user);
+ }
+ 
+}
+
+function S(){
+    Sound3.play();
+    tela.style.opacity = 1;
+    setTimeout(() => {
+        tela.style.opacity = 0;
+            setTimeout(() => {
+                tela.style.display = 'none'
+            }, 500);
+                }, 500);  
+
+user = document.getElementsByName("Usuario")[0].value;
+
+display_vol_Inf = document.getElementById("display_Vol_Inf");
+    display_vol_Inf.style.opacity = 0;
+        display_vol_Inf.style.display = "flex"
+            setTimeout(() => {
+                display_vol_Inf.style.opacity = 1;
+            }, 0);
+
+    setTimeout(() => {
+        tutorial()
+     
+            ph0.innerHTML= "Parabéns," +" "+ user +" "+ "Hoje é o seu Dia!";
+                ph1.innerHTML=  user +","+' '+"Feliz Aniversário! Que todos os seus sonhos sejam realizados e todos os seus desejos sejam alcançados.";
+                    display_vol_Inf.style.display = "none"
+                 }, 10000); 
+
+                 
+
+     let som = document.getElementById("audios")
+         som.play();
+             som.volume = 0.1;
+                
+                     
+                                 titulo.innerHTML = "CAÇA TESOURO<br> do(a)" +' '+ user;
+                            
+                         startAnimation()
+            
+     }
+
+      
+     
+     
+     
+     
+     function N(){
+        Sound3.play();
+         let user = document.getElementsByName("Usuario")[0].value = "";
+             intro.innerHTML = "<br> digite seu nome <br> corretamente.";
+                 userr.removeAttribute("disabled" , "disabled");
+                     bote.style.display = "block";
+                         dual.style.display = "none";
+         
+      }
+
+      
+//_______________________________________FUNCTION ENVIAR__________________________________________________//     
+      
+function envia() {
+    Sound3.play();
+        pass = document.getElementsByName("senha")[0].value
+             
+            if(pass == "Parabéns" || pass == "Parabens" || pass == "parabéns" || pass == "parabens"){
+             
+                window.location = 'https://dsgils.github.io/html-css/Exercicio/Tesouro2.html';
+             
+             } 
+         
+else{
+var sound2 = new Audio('Audio/Audio2.mp3');
+    sound2.play();
+        som.pause();
+
+            VD.style.display = "none";
+                VD.removeAttribute('controls','controls');
+                    VD.pause();
+
+                        btn2.setAttribute('disabled', 'disabled');
+
+                            popup.style.opacity = 0;
+                                popup.setAttribute('class','display_popup');
+                                    popup.style.display = "flex";
+                                        setTimeout(() => {
+                                            popup.style.opacity = 1;
+                                        },0);
+     }
+}//-------------------------------------------------------------------------------------------------//
+
+         
+     
+//__________________________________________FUNCTION_OK_______________________________________________//     
+function OK(){
+    Sound3.play();
+        let user = document.getElementsByName("senha")[0].value = "";
+ popup.style.opacity = 1
+     som.play()
+     setTimeout(() => {
+         popup.style.opacity = 0
+         
+             },0)
+
+     setTimeout(() => {
+         VD.style.display="flex";
+             VD.setAttribute('controls','controls');
+                 VD.play()
+                 btn2.removeAttribute('disabled', 'disabled');
+                     popup.style.display = "none";
+                         popup.removeAttribute('class','display_popup');
+     }, 1000);        
+};//--------------------------------------------------------------------------------------------------//
+             
+             
+ //________________________________________FUNCTION_TUTORIAL_________________________________________________//            
+function tutorial(){
+    Sound3.play();
+        Sound4.play();
+            Sound4.loop = true;
+                var tutor = document.getElementById("tuto");
+                    let vid = document.getElementById("vid");
+                        var btn2 = document.getElementById("btn2");
+
+ if(tutor.classList.contains('tuto') == true){
+
+     closetutorial()
+ }
+ 
+ else{tutor.classList.add("tuto");
+     tutor.setAttribute('style' , 'animation-name:backAnime');
+         setTimeout(() => {
+             closetutorial();
+                btnIntroducao.removeAttribute('disabled', 'disabled');
+                    btnIntroducao.style.background = "linear-gradient(#008800, #eee)";
+                        tutor.removeAttribute('style' , 'animation-name:backAnime');
+            }, 40000);
+
+                     ph0.style.display="flex";
+                 
+                     ph1.style.display="flex";
+
+                     ph2.style.display="flex";
+
+                     ph3.style.display="flex";
+                 
+                 
+                        vid.style.display ="none";
+                    vid.pause();
+                btnIntroducao.setAttribute('disabled', 'disabled');
+            btnIntroducao.style.background = "linear-gradient(#999999, #eee)";
+        btn2.setAttribute('disabled','disabled');
+    setTimeout(() => {
+
+tutor.style.pointerEvents = "auto";
+                         
+}, 3000);};}
+//------------------------------------------------------------------------------------------------//
+
+
+
+function closetutorial(){
+if(tutor.classList.contains('tuto') == true){
+     tutor.classList.remove('tuto');
+     Sound4.pause();
+     tutor.style.pointerEvents = "none";
+     ph0.style.display="none";
+     ph1.style.display="none";
+     ph2.style.display="none";
+     ph3.style.display="none";
+     
+     setTimeout(() => {
+         
+         vid.style.display ="block";
+         timer();
+         
+     }, 2000);}
+}
+
+
+
+function startAnimation() {
+setTimeout(() => {
+
+ }, 5000);
+}
+
+
+var tempo = document.getElementById("tempo")
+var vid = document.getElementById("vid")
+
+function timer()  { 
+    setTimeout(() => {
+        Sound3.play();
+            tempo.innerHTML = 3;
+    setTimeout(() => {
+        Sound3.play();
+            tempo.innerHTML = 2;
+    setTimeout(() => {
+        Sound3.play();
+            tempo.innerHTML = 1;
+    setTimeout(() => {
+         tempo.style.fontSize = "100px"
+         tempo.innerHTML = "PLAY";
+         vid.play();
+         btn2.removeAttribute('disabled','disabled');
+         tempo.style.opacity="1"
+         setTimeout(() => {
+             tempo.style.opacity="0"
+             
+         }, 500);
+     }, 1000);
+ }, 1000);
+}, 1000);
+}, 1000);}
+
+           
+             
+
+      
+
+        
+     
+ 
+
+</script>
+   
+  
+   
+</body>
+</html>
+
+
+
+
+
