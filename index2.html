@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <h1>bem vindo</h1>
+    <h1 id="h1">bem vindo</h1>
 </head>
 <body>
-    
+    <script>
+        let choices = ['a', 'b', 'c' , 'd']
+let tamanho_array = choices.length
+let n_aleatorio = Math.floor(Math.random() * tamanho_array);
+let retorno_aleatorio = choices[n_aleatorio];
+
+setTimeout(() => {
+    document.getElementById("h1").innerHTML = retorno_aleatorio;
+}, 2000);
+ 
+    </script>
 </body>
 </html>
