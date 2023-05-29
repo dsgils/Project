@@ -723,7 +723,7 @@
         }
 
 
-        #Aviso{
+        #Aviso , #Termos{
            
             display: none;
             
@@ -750,7 +750,22 @@
             text-align: center;
             
         }
-        #SubAviso button{
+    #Termos{
+        color: white;
+        font-size: 20px;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(0, 0, 0,0.9);
+        transition: ease-in 700ms;
+        
+    }
+    #Termos button{
+        width:100%;
+        height: 40px;
+        font-size: 30px;
+    }
+        #SubAviso button, #condicoes button{
             width: 80%;
             height: 50px;
             font-size: 25px;
@@ -827,9 +842,25 @@
             90%{left: 150px;top:3080px;transform: rotate(-10deg);}
             100%{left: 800px;top:3000px;transform: rotate(-30deg);}
         }
+        #regras{
+        width: 100%;
+        text-align: start;
 
- 
         }
+
+        .Cancelar{
+            background-color: red;
+            color: white;
+            
+        }
+        .cancelar{
+            display: none;
+            
+        }
+    
+    
+    
+    }
             
        
     </style>
@@ -838,6 +869,13 @@
 <body id="body">
     <div class="NoSuported">
         <div class="textDisplay">Display não Suportado.</div>
+        </div>
+        
+        <div id="Termos">
+           
+                 <div style="overflow-y: scroll" id="regras">Regras de comparecimento<br> <br>1. O aluno após matricular-se, deverá informar a quinta-feira em que irá assistir a primeira aula.<br> <br>2. O aluno não pode ultrapassar o número de 7 faltas. A falta de muitas aulas resultará na suspensão da matrícula, ficando o aluno sujeito ao pagamento de uma taxa de R$ 29,00, caso ainda tenha interesse em renovar a matrícula. <br> <br>3. o curso é totalmente gratuito, assim como os alunos os professores precisam se deslocar até o local do curso, então imagine que alunos começem a faltar aulas, sem alunos os professores não terão motivos para dar continuidade ao projeto, e para isso fazemos as regras.   </div> <br> <br> Ao continuar você concorda com os Termos e Condições do curso.<br><br><button onclick="confirm()">Casdastrar</button><br><button onclick="cancelar()" class="Cancelar">cancelar</button>
+                
+            
         </div>
 
 
@@ -1277,6 +1315,7 @@ function sound(){
         var mostrar1 = document.getElementById("mostrar1");
         var mostrar2 = document.getElementById("mostrar2");
         var win2 = document.getElementById("winPopup2");
+        var termo = document.getElementById("Termos");
         var displaytwo = document.getElementById("display_black2");
         Aviso = document.getElementById("Aviso");
         ImgTest = document.getElementById("ImgTest");
@@ -1296,8 +1335,30 @@ function sound(){
         video1 = document.getElementById("Video1");
         btnvideo = document.getElementById("btnVideo");
         logoBottom = document.getElementById("logobottom");
+        var imgbutton = document.getElementById("imgbutton");
+        
+
+        function cancelar(){
+            
+                    termo.style.display = "none"
+                    imgbutton.style.pointerEvents = 'auto';
+            imgbutton.style.opacity = "1"
+
+              
+        }
 
 
+        function termoAceito(){
+            termo.style.opacity = '0'
+            termo.style.display = 'flex';
+            setTimeout(() => {
+                termo.style.opacity = '1'
+            }, 200);
+            
+            imgbutton.style.pointerEvents = 'none';
+            imgbutton.style.opacity = "0"
+
+        }
 
         function aviso(){
             Aviso.style.display = "flex"
@@ -1563,6 +1624,10 @@ function sound(){
        
     
        function ExitBlack2(){
+        document.getElementById("imgbutton").style.pointerEvents = 'auto'
+       
+           
+        cancelar();
         startInsc()
         displaytwo.style.display = "none";
         SongCadastro.volume = 0;
@@ -1572,7 +1637,7 @@ function sound(){
             }, 5000);
            
                 new Audio('Audio/Corrigir.mp3').play()
-            }, 1500);
+            }, 3000);
             
        } 
         
@@ -1619,24 +1684,30 @@ function sound(){
             }
             
             else{
-                startInsc()
-                displaytwo.style.opacity = 0;
-                displaytwo.style.display = "flex";
-                setTimeout(() => {
-                    displaytwo.style.opacity = 1
-                }, 200);
-                var dat = document.getElementById("date").value;
+                termoAceito();
+                startInsc();
+            var dat = document.getElementById("date").value;
 
             document.getElementById("nasciMento").innerHTML = dat;    
-            document.getElementById("nomeCompleto").innerHTML = nome;
-            document.getElementById("teleFone").innerHTML = fone;
-            document.getElementById("Rua").innerHTML = lagradouro +' '+ 'nº'+numero ;
-            document.getElementById("Cidade").innerHTML = cidade +' '+ '-'+' '+uf ;
+                document.getElementById("nomeCompleto").innerHTML = nome;
+                    document.getElementById("teleFone").innerHTML = fone;
+                        document.getElementById("Rua").innerHTML = lagradouro +' '+ 'nº'+numero ;
+                            document.getElementById("Cidade").innerHTML = cidade +' '+ '-'+' '+uf ;
             setTimeout(() => {
-                new Audio('Audio/Conferir.mp3').play()
+            new Audio('Audio/Conferir.mp3').play()
             }, 2000);
             }
-        }
+               
+            }
+
+            function confirm(){
+                displaytwo.style.opacity = 0;
+                    displaytwo.style.display = "flex";
+                        setTimeout(() => {
+                            displaytwo.style.opacity = 1
+            }, 200);
+            }
+          
        
         function whatsapp(){
             window.location = 'https://api.whatsapp.com/send?phone=5581997072663&text=Olá, Me chamo {{nome}} %C3%A1,%20Quero%20Fazer%20Minha%20Inscri%C3%A7%C3%A3o.';
