@@ -1993,6 +1993,16 @@ function startCurso(){
                                         closeD.removeAttribute('onclick','fechar()')
                                         closeD.setAttribute('onclick','fechar();PlaySound()')
                                         logo.removeAttribute('onclick','song1()');
+                                        if(intro.classList.contains("winIntro1")==true){
+                                        intro.classList.remove("winIntro1")
+                                        T1.style.opacity = 1
+                           
+                            
+                                    setTimeout(() => {
+                                        T1.style.opacity = 0;
+                                        but[0].innerHTML = "Inicio";
+                                            T1.style.display = "none";
+                                                 }, 0);;}
                 }, 1000);}}
 
                 function PlaySound(){
