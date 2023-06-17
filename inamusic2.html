@@ -915,7 +915,23 @@
        
        <form>
         <div class="textLogin">Faça Login</div>
-        <input class="nameLogin" type="text" name="usuario">
+    <input class="nameLogin" list="listName" name="usuario">
+        <datalist id="listName">
+            <option value ="Mickaelly">
+                <option value ="Deivid">
+                    <option value ="Esther">
+                        <option value ="Deise">
+                            <option value ="Melissa">
+                                <option value ="Jaiane">
+                                    <option value ="Livia">
+                                        <option value ="Yasmin">
+                                            <option value ="Israel">
+                                                <option value ="Eglacielly">
+                                        
+                                    </option>
+                                </option>
+                            </option>
+        </datalist>
         <input class="passLogin" type="text" name="password">
         <input class="btnLogin" type="submit">
        </form>
@@ -1025,15 +1041,7 @@ function sound(){
         var imgbutton = document.getElementById("imgbutton");
 
 
-        s(".renovation").addEventListener('click', ()=>{
-            if(s(".window").classList.contains("Open")==true){
-
-                s(".window").classList.remove("Open");
-
-            } else{
-                s(".window").classList.add("Open");
-            }
-        })
+        
         
 
         function cancelar(){
@@ -1079,23 +1087,10 @@ function sound(){
         }, 8000);
 
 
-       setInterval(() => {
-         
        
-            setTimeout(() => {
-                ImgTest.setAttribute('src','Imagens/img11.jpg')
-                setTimeout(() => {
-                    ImgTest.setAttribute('src','Imagens/img6.jpg')
-                    setTimeout(() => {
-                        ImgTest.setAttribute('src','Imagens/img5.jpg')
-                
-            }, 3000);
-            }, 3000);
-            }, 3000);
-        }, 10000);
 
         
-            but[0].style.animationName = "botaoAluno";
+           
             
         
         
